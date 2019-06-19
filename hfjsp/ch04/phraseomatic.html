@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Phrase-o-matic</title>
+        <script>
+            function randomWord(words) {
+                var index = Math.floor(Math.random() * words.length);
+                return words[index];
+            }
+
+        	function makePhrases() {
+                var words1 = ["24/7", "multi-tier", "30,000 foot", "B-to-B", "win-win"];
+                var words2 = ["empowered", "value-added", "oriented", "focused", "aligned"];
+                var words3 = ["process", "solution", "tipping-point", "strategy", "vision"];
+
+                var phrase = randomWord(words1) + " " + randomWord(words2) + " " + randomWord(words3);
+                alert(phrase);
+            }
+
+            makePhrases();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

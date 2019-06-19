@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bubble Factory Test Lab</title>
+        <script>
+            function findMax(numbers, printFlag) {
+                var max = numbers[0];
+                for (var i = 1; i < numbers.length; i++) {
+                    if (numbers[i] > max) {
+                        max = numbers[i];
+                    }
+                    if (printFlag) {
+                        console.log("Bubble solution #" + i + " score: " + numbers[i]);
+                    }
+                }    
+                return max;
+            }
+
+            function getMostEffective(scores, costs, high) {
+                var index = 0;
+                var minCost = 100.0;
+                for (var i = 0; i < scores.length; i++) {
+                    if (scores[i] == high) {
+                        if (costs[i] < minCost) {
+                            minCost = costs[i];
+                            index = i;
+                        }
+                    }
+                }
+                return index;
+            }
+
+            function findBest(numbers, high) {
+                var highest = [];
+                for (var i = 0; i < numbers.length; i++) {
+                    if (numbers[i] == high) {
+                        highest.push(i);
+                    }
+                }
+                return highest;
+            }
+
+            var scores =   [60, 50, 60, 58, 54, 54,
+                            58, 50, 52, 54, 48, 69,
+                            34, 55, 51, 52, 44, 51,
+                            69, 64, 66, 55, 52, 61,
+                            46, 31, 57, 52, 44, 18,
+                            41, 53, 55, 61, 51, 44];
+            var costs =    [.25, .27, .25, .25, .25, .25,
+                            .33, .31, .25, .29, .27, .22,
+                            .31, .25, .25, .33, .21, .25,
+                            .25, .25, .28, .25, .24, .22,
+                            .20, .25, .30, .25, .24, .25,
+                            .25, .25, .27, .25, .26, .29];
+            var max = findMax(scores, true);
+            console.log("Bubbles test: " + scores.length);
+            console.log("Highest bubble score: " + max);
+
+            var mostEffective = getMostEffective(scores, costs, max);
+            console.log("The most effecitive solution is #" + mostEffective);
+            console.log("It's cost: " + costs[mostEffective]);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
