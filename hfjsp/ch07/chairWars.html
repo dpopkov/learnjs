@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chair Wars</title>
+        <script>
+        	function isPhoneNumber1(s) {
+        		if ((typeof s) != "string") {
+        			return false;
+        		}
+                if (s.length == 8) {
+                    var first = s.substring(0, 3);
+                    var second = s.substring(4);
+                    return s.charAt(3) == "-" && !isNaN(first) && !isNaN(second);
+                } else if (s.length == 7) {
+                    return !isNaN(s);
+                } else {
+                    return false;
+                }
+        	}
+
+            function isPhoneNumber(s) {
+                return s.match(/^\d{3}-?\d{4}$/);
+            }
+
+        	var value = prompt("Enter a phone number or other string: ");
+        	var rst = isPhoneNumber(value);
+        	if (rst) {
+        		console.log(value + " is a phone number");
+        	} else {
+        		console.log(value + " is not a phone number");
+        	}
+        </script>
+    </head>
+    <body>
+    	<h1>Tmp page</h1>
+    </body>
+</html>
