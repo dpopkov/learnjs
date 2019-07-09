@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Image Guess</title>
+        <style>
+            body {
+                margin: 20px;
+            }
+        </style>
+        <script>
+            function imageClickHandler(e) {
+                if (e && e.currentTarget) {
+                    var image = e.currentTarget;
+                    image.src = "zero.jpg";
+                }
+            }
+            function init() {
+                document.getElementById("zero1").onclick = imageClickHandler;
+                document.getElementById("zero2").onclick = imageClickHandler;
+            }
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+    	<img id="zero1" src="zeroblur.jpg"><br>
+        <img id="zero2" src="zeroblur.jpg"><br>
+    </body>
+</html>

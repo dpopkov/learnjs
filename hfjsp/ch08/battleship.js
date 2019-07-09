@@ -23,11 +23,6 @@ var model = {
 	numShips: 3,
 	shipLength: 3,
 	shipsSunk: 0,
-	/*ships: [
-		{ locations: ["10", "20", "30"], hits: ["", "", ""]},
-		{ locations: ["32", "33", "34"], hits: ["", "", ""]},
-		{ locations: ["63", "64", "65"], hits: ["", "", ""]}
-	],*/
 	ships: [
 		{ locations: [0, 0, 0], hits: ["", "", ""]},
 		{ locations: [0, 0, 0], hits: ["", "", ""]},

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Timeout</title>
+        <script>
+            function timerHandler() {
+                alert("Hello! 5 more seconds passed away!");
+                setTimeout5Seconds();
+            }
+            function setTimeout5Seconds() {
+                setTimeout(timerHandler, 5000);
+            }
+        	window.onload = setTimeout5Seconds;
+        </script>
+    </head>
+    <body>
+    	<h3>Timeout</h3>
+    </body>
+</html>
