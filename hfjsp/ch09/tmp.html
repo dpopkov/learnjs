@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <title>Your HTML Page</title>
         <script>
-        	function pageLoadHandler() {
-        		console.log("pageLoadHandler() invoked!!!");
-        	}
-        	window.onload = pageLoadHandler;
+        	window.onload = function() {
+                alert("The page is loaded!");
+            };
         </script>
     </head>
     <body>

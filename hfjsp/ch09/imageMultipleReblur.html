@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Multiple Images Guess</title>
+        <style>
+            body {
+                margin: 20px;
+            }
+            img {
+                margin: 20px;
+            }
+        </style>
+        <script>
+            var revealOnClick = false;
+
+            function unBlurImage(image) {
+                image.src = image.id + ".jpg";
+            }
+            function blurImage(image) {
+                image.src = image.id + "blur.jpg";
+            }
+            function imageClickHandler(e) {
+                var image = e.target;
+                if (image.src.indexOf("blur") != -1) {
+                    unBlurImage(image);
+                    setTimeout(blurImage, 2000, image);
+                } else {
+                    blurImage(image);
+                }
+                
+            }
+            function imageOnMouseOverHandler(e) {
+                var image = e.target;
+                if (image.src.indexOf("blur") != -1) {
+                    unBlurImage(image);
+                }
+            }
+            function imageOnMouseOutHandler(e) {
+                var image = e.target;
+                if (image.src.indexOf("blur") == -1) {
+                    blurImage(image);
+                }
+            }
+            function init() {
+                var images = document.getElementsByTagName("img");
+                for (var i = 0; i < images.length; i++) {
+                    if (revealOnClick) {
+                        images[i].onclick = imageClickHandler;    
+                    } else {
+                        images[i].onmouseover = imageOnMouseOverHandler;
+                        images[i].onmouseout = imageOnMouseOutHandler;
+                    }
+                }
+            }
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+    	<img id="zero" src="zeroblur.jpg">
+        <img id="one" src="oneblur.jpg">
+        <img id="two" src="twoblur.jpg">
+        <img id="three" src="threeblur.jpg">
+        <img id="four" src="fourblur.jpg">
+        <img id="five" src="fiveblur.jpg">
+    </body>
+</html>
