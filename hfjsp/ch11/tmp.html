@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Your HTML Page</title>
+        <script>
+        	var secret = "007";
+        	function getSecret() {
+        		var secret = "008";
+        		function getValue() {
+        			return secret;
+        		}
+        		return getValue();
+        	}
+
+        	var s = getSecret();
+        	console.log("s = " + s);
+
+        	function getSecret2() {
+        		var secret = "009";
+        		function getValue() {
+        			return secret;
+        		}
+        		return getValue;
+        	}
+        	var getValueFun = getSecret2();
+        	var s2 = getValueFun();
+        	console.log("s2 = " + s2);
+
+        	var justABar = "Oh, don't you worry about it, I'm GLOBAL";
+        	function whereAreYou() {
+        		var justABar = "Just an every day LOCAL";
+        		function inner() {
+        			return justABar;
+        		}
+        		return inner;
+        	}
+        	var innerFunction = whereAreYou();
+        	var r = innerFunction();
+        	console.log("r = " + r);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Closures</title>
+        <script>
+        	function makePassword(password) {
+        		return function(passwordGuess) {
+        			return passwordGuess === password;
+        		};
+        	}
+        	function multN(n) {
+        		return function(x) {
+        			return n * x;
+        		};
+        	}
+        	function makeCounter() {
+        		var count = 0;
+        		return {
+        			increment: function() {
+        				count = count + 1;
+        				return count;
+        			}
+        		};
+        	}
+        	function makeTimer(doneMessage, seconds) {
+        		setTimeout(function() {
+        			alert(doneMessage);
+        		}, seconds * 1000);
+        	}
+
+        	function setTimer(doneMessage, seconds) {
+        		setTimeout(function() {
+        			alert(doneMessage);
+        		}, seconds * 1000);
+        		doneMessage = "OUCH!";
+        	}
+        </script>
+    </head>
+    <body>
+    	<h3>Closures examples</h3>
+    </body>
+</html>
