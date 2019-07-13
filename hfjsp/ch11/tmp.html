@@ -33,9 +33,13 @@
         		function inner() {
         			return justABar;
         		}
-        		return inner;
+                function setJustABar(newValue) {
+                    justABar = newValue;
+                }
+        		return {innerFunction: inner, setValue: setJustABar};
         	}
-        	var innerFunction = whereAreYou();
+            var funObj = whereAreYou();
+        	var innerFunction = funObj.innerFunction;
         	var r = innerFunction();
         	console.log("r = " + r);
         </script>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Click me!</title>
+        <style>
+        	body, button { margin: 10px; }
+        	div { padding: 10px; }
+        </style>
+        <script>
+        	window.onload = function() {
+        		var message = document.getElementById("message");
+
+        		function makeHandler() {
+        			var count = 0;
+        			
+        			return function() {
+        				count++;
+        				message.innerHTML = "You clicked me " + count + " times!";
+        			}
+        		}
+
+        		function clear() {
+        			message.innerHTML = "";
+        		}
+
+        		document.getElementById("clickme").onclick = makeHandler();
+        		document.getElementById("clear").onclick = clear;
+        	};
+        </script>
+    </head>
+    <body>
+    	<button id="clickme">Click me!</button>
+    	<button id="clear">Clear me</button>
+    	<div id="message"></div>
+    </body>
+</html>
