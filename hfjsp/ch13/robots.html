@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Robots</title>
+        <script>
+        	function Robot(name, year, owner) {
+                this.name = name;
+                this.year = year;
+                this.owner = owner;
+            }
+            Robot.prototype.maker = "Bostyn Denamiks";
+            Robot.prototype.speak = function() {
+                console.log("Hello, my name is " + this.name);
+            };
+            Robot.prototype.makeCoffee = function() {
+                console.log(this.name + " is making coffee");
+            }
+            Robot.prototype.blinkLights = function() {
+                console.log(this.name + " is blinking lights");
+            }
+
+            var robby = new Robot("Robby", 2001, "Bob");
+            var rosie = new Robot("Rosie", 2003, "Bob");
+            
+            robby.onOffSwitch = function() {
+                console.log(this.name + " is switching off. Good Night!");
+            };
+            rosie.cleanHouse = function() {
+                console.log(this.name + " is cleaning house");
+            };
+
+            console.log(robby.name + " was made by " + robby.maker + " in " + robby.year 
+                + " and is owned by " + robby.owner);
+            robby.makeCoffee();
+            robby.blinkLights();
+
+            console.log(rosie.name + " was made by " + rosie.maker + " in " + rosie.year 
+                + " and is owned by " + rosie.owner);
+            rosie.cleanHouse();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
