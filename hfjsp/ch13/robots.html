@@ -15,10 +15,13 @@
             };
             Robot.prototype.makeCoffee = function() {
                 console.log(this.name + " is making coffee");
-            }
+            };
             Robot.prototype.blinkLights = function() {
                 console.log(this.name + " is blinking lights");
-            }
+            };
+            Robot.prototype.toString = function() {
+                return this.name + " Robot belonging to " + this.owner;
+            };
 
             var robby = new Robot("Robby", 2001, "Bob");
             var rosie = new Robot("Rosie", 2003, "Bob");
